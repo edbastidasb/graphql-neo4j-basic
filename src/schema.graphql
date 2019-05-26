@@ -1,0 +1,11 @@
+type User{
+    id: ID!
+    name: String!
+    origen: Pais! @relation (name:"NACIONALIDAD", direction:OUT)
+}
+
+type Pais{
+    id: ID!
+    name: String!
+    usuarios: [User!]! @relation (name:"NACIONALIDAD",direction:IN)
+}

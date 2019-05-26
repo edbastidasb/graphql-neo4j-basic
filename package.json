@@ -1,0 +1,35 @@
+{
+  "name": "graphql-neo4j02",
+  "version": "1.0.0",
+  "description": "Servidor Graphql con neo4j",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "./node_modules/.bin/nodemon --exec babel-node src/index.js",
+    "build": "babel src -d build; cp .env build; cp src/schema.graphql build",
+    "now-build": "babel src -d build; cp .env build; cp src/schema.graphql build",
+    "start": "npm run build && node build/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "apollo-link-http": "^1.5.14",
+    "apollo-server": "^2.4.8",
+    "dotenv": "^7.0.0",
+    "graphql-tag": "^2.10.1",
+    "neo4j-driver": "^1.7.3",
+    "neo4j-graphql-js": "^2.5.0",
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "nodemon": "^1.18.11"
+  }
+}
