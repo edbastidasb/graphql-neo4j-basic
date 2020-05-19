@@ -8,6 +8,8 @@ import dotenv from "dotenv";
 // establecer variables de entorno desde ../.env
 dotenv.config();
 
+console.log(process.env.NODE_ENV);
+
 const app = express();
 
 /*
@@ -41,8 +43,8 @@ const driver = neo4j.driver(
 const server = new ApolloServer({
   context: { driver },
   schema: schema,
-  introspection: true,
-  playground: true
+ // introspection: true,
+ // playground: true
 });
 
 // Especifique el puerto y la ruta para el punto final de GraphQL
