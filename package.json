@@ -8,7 +8,7 @@
     "start-dev": "./node_modules/.bin/nodemon --exec babel-node src/index.js",
     "build": "babel src -d build; cp .env build; cp src/schema.graphql build",
     "now-build": "babel src -d build; cp .env build; cp src/schema.graphql build",
-    "start": "npm run build && node build/index.js"
+    "start": "babel-node src/index.js"
   },
   "keywords": [],
   "author": "",
